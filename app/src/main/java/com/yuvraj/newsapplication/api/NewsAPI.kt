@@ -1,12 +1,12 @@
 package com.yuvraj.newsapplication.api
 
-import com.yuvraj.newsapplication.models.Newsresponse
+import com.yuvraj.newsapplication.models.NewsResponse
 import com.yuvraj.newsapplication.util.Constants.Companion.API_KEY
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface NewsApi {
+interface NewsAPI {
     @GET("v2/top-headlines")
     suspend fun getBreakingNews(
         @Query("country")
@@ -15,7 +15,7 @@ interface NewsApi {
         pageNumber: Int = 1,
         @Query("apiKey")
         apiKey: String = API_KEY
-    ): Response<Newsresponse>
+    ): Response<NewsResponse>
 
     @GET("v2/everything")
     suspend fun searchForNews(
@@ -25,5 +25,5 @@ interface NewsApi {
         pageNumber: Int = 1,
         @Query("apiKey")
         apiKey: String = API_KEY
-    ): Response<Newsresponse>
+    ): Response<NewsResponse>
 }
