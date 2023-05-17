@@ -1,6 +1,6 @@
 package com.yuvraj.newsapplication.api
 
-import com.yuvraj.newsapplication.Newsresponse
+import com.yuvraj.newsapplication.models.Newsresponse
 import com.yuvraj.newsapplication.util.Constants.Companion.API_KEY
 import retrofit2.Response
 import retrofit2.http.GET
