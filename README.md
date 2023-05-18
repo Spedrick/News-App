@@ -7,6 +7,11 @@ I am thrilled to present to you the News Android App. In today's fast-paced worl
 
 The News Android App is your reliable companion in the pursuit of information. Whether you are a news enthusiast, a business professional, a student, or simply someone who values being well-informed, our app caters to all your needs.
 
+- see the top breaking news
+- save the news for later
+- search for your favorite news
+- Need to clean your saved news? just swipe on the saved news to delete it.
+
 
 
 ### APIs used in the project :
@@ -23,6 +28,7 @@ The News Android App is your reliable companion in the pursuit of information. W
   * Retrofit2
   * Mutable LiveData
   * Glide
+  * Pagination
   * Activity KTX for ViewModels
   
 
