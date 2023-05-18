@@ -17,7 +17,9 @@ import com.yuvraj.newsapplication.ui.NewsViewModel
 import com.yuvraj.newsapplication.util.Constants
 import com.yuvraj.newsapplication.util.Constants.Companion.SEARCH_NEWS_TIME_DELAY
 import com.yuvraj.newsapplication.util.Resource
+import kotlinx.android.synthetic.main.fragment_breaking_news.*
 import kotlinx.android.synthetic.main.fragment_search_news.*
+import kotlinx.android.synthetic.main.fragment_search_news.paginationProgressBar
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.delay
@@ -65,6 +67,9 @@ class SearchNewsFragment : Fragment(R.layout.fragment_search_news) {
                         newsAdapter.differ.submitList(newsResponse.articles.toList())
                         val totalPages = newsResponse.totalResults / Constants.QUERY_PAGE_SIZE + 2
                         isLastPage = viewModel.searchNewsPage == totalPages
+                        if(isLastPage) {
+                            rvBreakingNews.setPadding(0,0,0,0)
+                        }
                     }
                 }
                 is Resource.Error -> {
@@ -112,8 +117,6 @@ class SearchNewsFragment : Fragment(R.layout.fragment_search_news) {
             if(shouldPaginate) {
                 viewModel.searchNews(etSearch.text.toString())
                 isScrolling = false
-            } else {
-                rvSearchNews.setPadding(0, 0, 0, 0)
             }
         }
 
